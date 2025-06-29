@@ -2,16 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+@theme {
+  --ogreen-300: #a7c957;
+  --ogreen-400: #6a994e;
+  --ogreen-500: #386641;
+  --ogreen-600: #112215;
+  --ored-500: #bc4749;
+  --oyellow-200: #f2e8cf;
+  --oyellow-500: #c98f46;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: -apple-system, "Montserrat", BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #f2e8cf;
+  color: #112215;
+  @apply mx-12 md:mx-64;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Raleway", sans-serif;
+}
+
+h1 {
+  @apply font-semibold;
+  @apply text-4xl;
+}
+
+h2 {
+  @apply text-3xl;
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+p {
+  @apply text-lg;
 }
