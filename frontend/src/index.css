@@ -48,5 +48,5 @@ h3 {
 }
 
 p {
-  @apply text-lg;
+  @apply text-sm;
 }
