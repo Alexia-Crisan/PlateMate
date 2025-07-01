@@ -2,24 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-@theme {
-  --ogreen-300: #a7c957;
-  --ogreen-400: #6a994e;
-  --ogreen-500: #386641;
-  --ogreen-600: #112215;
-  --ored-500: #bc4749;
-  --oyellow-200: #f2e8cf;
-  --oyellow-500: #c98f46;
-}
-
 body {
   margin: 0;
   font-family: -apple-system, "Montserrat", BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #f2e8cf;
-  color: #112215;
+  @apply bg-oyellow-200;
+  @apply text-ogreen-900;
   @apply mx-12 md:mx-64;
 }
 
