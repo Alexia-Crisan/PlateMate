@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { ShoppingCart, Trash2 } from "lucide-react";
+import LineItem from '../components/LineItem';
 
 export default function GroceryListPage() {
   const [items, setItems] = useState([
@@ -23,26 +24,14 @@ export default function GroceryListPage() {
 
         <div className="space-y-4 max-w-md mx-auto">
           {items.map((item) => (
-            <div
+            <LineItem
               key={item.id}
-              className="p-4 rounded-lg flex justify-between items-center shadow-md bg-ogreen-900"
-            >
-              <div className="flex items-center space-x-3">
-                <ShoppingCart className="w-6 h-6 text-white" />
-                <div>
-                  <p className="font-semibold text-white">{item.name}</p>
-                  <p className="text-sm text-ogreen-400">
-                    added by: {item.user}
-                  </p>
-                </div>
-              </div>
-              <button
-                onClick={() => handleDelete(item.id)}
-                aria-label={`Delete ${item.name}`}
-              >
-                <Trash2 className="w-5 h-5 text-ored-500" />
-              </button>
-            </div>
+              title={item.name}
+              bottomText={`added by: ${item.user}`}
+              leftIcon={ShoppingCart}
+              rightIcon={Trash2}
+              onRightIconClick={() => handleDelete(item.id)}
+            />
           ))}
         </div>
 
@@ -50,6 +39,7 @@ export default function GroceryListPage() {
           <button className="px-6 py-3 rounded-lg shadow-md bg-ogreen-500 text-white hover:bg-ogreen-600 active:bg-ogreen-700">
             Add to list
           </button>
+          
           <button
             onClick={handleClear}
             className="px-6 py-3 rounded-lg shadow-md bg-ored-500 text-white hover:bg-ored-600 active:bg-ored-700"
