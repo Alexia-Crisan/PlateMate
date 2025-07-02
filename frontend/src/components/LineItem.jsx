@@ -3,6 +3,8 @@ export default function LineItem({
   bottomText,
   leftIcon: LeftIcon,
   rightIcon: RightIcon,
+  rightColorIcon,
+  rightColorIconHover,
   onRightIconClick,
 }) {
   return (
@@ -19,8 +21,10 @@ export default function LineItem({
       </div>
 
       {RightIcon && (
-        <button onClick={onRightIconClick} aria-label={`Delete ${title}`}>
-          <RightIcon className="w-5 h-5 text-ored-500 hover:text-ored-600" />
+        <button onClick={onRightIconClick} aria-label={`Action ${title}`}>
+          <RightIcon
+            className={`w-5 h-5 ${rightColorIcon} ${rightColorIconHover}`}
+          />
         </button>
       )}
     </ul>
