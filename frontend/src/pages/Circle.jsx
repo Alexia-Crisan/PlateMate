@@ -5,6 +5,7 @@ import CircleIcon from "../components/CircleIcon.jsx";
 import MyButton from "../components/MyButton.jsx";
 import LineItem from "../components/LineItem.jsx";
 import BottomText from "../components/BottomText.jsx";
+import NewRecipeModal from "../components/NewRecipeModal.jsx";
 
 export default function Circle() {
   const { id } = useParams();
@@ -54,7 +55,15 @@ export default function Circle() {
 
   function handleDeleteCircle() {}
 
-  function openAddRecipeModal() {}
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  function openAddRecipeModal() {
+    setIsModalOpen(true);
+  }
+
+  function handleCloseRecipeModal() {
+    setIsModalOpen(false);
+    console.log("Closed recipe modal");
+  }
 
   return (
     <div className="flex flex-col items-center ">
@@ -133,6 +142,8 @@ export default function Circle() {
           />
         </div>
       </div>
+
+      {isModalOpen && <NewRecipeModal onClick={handleCloseRecipeModal} />}
     </div>
   );
 }
