@@ -1,31 +1,28 @@
-import React from "react";
-
 export default function LineItem({
   title,
   bottomText,
   leftIcon: LeftIcon,
   rightIcon: RightIcon,
-  onRightIconClick
+  onRightIconClick,
 }) {
   return (
-    <div
+    <ul
       key={title}
-      className="p-4 rounded-lg flex justify-between items-center shadow-md bg-ogreen-900"
+      className="py-4 px-5 rounded-lg flex justify-between items-center bg-ogreen-900"
     >
-      <div className="flex items-center space-x-3">
-        <LeftIcon className="w-6 h-6 text-white" />
-          <div>
-            <p className="font-semibold text-white">{title}</p>
-            <p className="text-sm text-ogreen-400">{bottomText}</p>
-          </div>
+      <div className="flex items-center space-x-6">
+        <LeftIcon className="text-white" />
+        <div>
+          <p className="font-medium text-lg text-white">{title}</p>
+          <p className="text-sm text-ogreen-400">{bottomText}</p>
+        </div>
       </div>
-              
-      {RightIcon && 
-      (
+
+      {RightIcon && (
         <button onClick={onRightIconClick} aria-label={`Delete ${title}`}>
           <RightIcon className="w-5 h-5 text-ored-500 hover:text-ored-600" />
         </button>
       )}
-     </div>
+    </ul>
   );
 }
