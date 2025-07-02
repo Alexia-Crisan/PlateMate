@@ -4,6 +4,8 @@ import org.platemate.backend.repos.UserRepository;
 import org.platemate.backend.models.User;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/user")
 public class UserController {
@@ -18,5 +20,10 @@ public class UserController {
         User user = new User();
         user.setUsername(username);
         return userRepository.save(user);
+    }
+
+    @GetMapping
+    public List<User> getUsers() {
+        return userRepository.findAll();
     }
 }
