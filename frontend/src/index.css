@@ -30,6 +30,7 @@ h1 {
 
 h2 {
   @apply text-2xl;
+  @apply font-semibold;
 }
 
 h3 {
@@ -38,4 +39,8 @@ h3 {
 
 p {
   @apply text-sm;
+}
+
+ul {
+  @apply space-y-2 list-none w-full;
 }

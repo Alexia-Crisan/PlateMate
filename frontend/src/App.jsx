@@ -12,8 +12,8 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/circle/:id" element={<Cirlce />} />
-            <Route path="/list" element={<GroceryList />} />
+            <Route path="/circles/:id" element={<Cirlce />} />
+            <Route path="/circles/:id/groceries" element={<GroceryList />} />
           </Routes>
         </Router>
       </div>
