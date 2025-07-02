@@ -91,7 +91,10 @@ export default function GroceryListPage() {
       </ul>
 
       <div className="flex justify-between mt-4 w-full">
-        <button className="px-6 py-3 rounded-lg shadow-md bg-ogreen-500 text-white hover:bg-ogreen-600 active:bg-ogreen-700">
+        <button
+          onClick={handleAddClick}
+          className="px-6 py-3 rounded-lg shadow-md bg-ogreen-500 text-white hover:bg-ogreen-600 active:bg-ogreen-700"
+        >
           Add to list
         </button>
 

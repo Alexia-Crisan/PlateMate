@@ -6,17 +6,22 @@ export default function LineItem({
   rightColorIcon,
   rightColorIconHover,
   onRightIconClick,
+  bottomElement: BottomElement,
 }) {
   return (
     <ul
       key={title}
-      className="py-4 px-5 rounded-lg flex justify-between items-center bg-ogreen-900"
+      className="py-4 px-5 rounded-lg flex items-center bg-ogreen-900"
     >
-      <div className="flex items-center space-x-6">
+      <div className="flex items-center space-x-6 w-full">
         <LeftIcon className="text-white" />
-        <div>
+        <div className="w-full">
           <p className="font-medium text-lg text-white">{title}</p>
-          <p className="text-sm text-ogreen-400">{bottomText}</p>
+          {BottomElement ? (
+            <div>{BottomElement}</div>
+          ) : (
+            <p className="text-sm text-ogreen-400">{bottomText}</p>
+          )}
         </div>
       </div>
 
