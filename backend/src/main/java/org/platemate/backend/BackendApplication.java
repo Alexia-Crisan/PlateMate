@@ -11,8 +11,6 @@ import org.springframework.context.annotation.ComponentScan;
 public class BackendApplication {
 
     public static void main(String[] args) {
-        System.out.println("DB_URL: " + System.getenv("DB_CONNECTION_STRING"));
-
         SpringApplication.run(BackendApplication.class, args);
     }
 
