@@ -4,8 +4,8 @@ import { ConciergeBell, CircleUser, Trash2, Crown, Cookie } from "lucide-react";
 import CircleIcon from "../components/CircleIcon.jsx";
 import MyButton from "../components/MyButton.jsx";
 import LineItem from "../components/LineItem.jsx";
-import BottomText from "../components/BottomText.jsx";
 import NewRecipeModal from "../components/NewRecipeModal.jsx";
+import ViewRecipeModal from "../components/ViewRecipeModal.jsx";
 
 export default function Circle() {
   const { id } = useParams();
@@ -60,8 +60,18 @@ export default function Circle() {
     setIsModalOpen(true);
   }
 
-  function handleCloseRecipeModal() {
+  function handleCloseModal() {
     setIsModalOpen(false);
+    console.log("Closed recipe modal");
+  }
+
+  const [isReciepeModalOpen, setIsReciepeModalOpen] = useState(false);
+  function openReciepeModalOpen() {
+    setIsReciepeModalOpen(true);
+  }
+
+  function handleCloseRecipeModal() {
+    setIsReciepeModalOpen(false);
     console.log("Closed recipe modal");
   }
 
@@ -124,12 +134,18 @@ export default function Circle() {
               rightColorIcon="text-ored-500"
               rightColorIconHover="text-ored-600"
               bottomElement={
-                <BottomText
-                  text1="See details"
-                  text2={`Created by ${recipe.createdBy}`}
-                />
-              }
-            />
+                <button
+                  onClick={openReciepeModalOpen}
+                  className="text-left w-full bg-transparent p-0 m-0 border-none outline-none cursor-pointer"
+                >
+                <div className="flex flex-col"> 
+                  <span className="text-ogreen-500">{`Created by ${recipe.createdBy}`}</span>
+                  <span className="text-ogreen-400">See details</span>
+                </div>
+                </button>
+  }
+/>
+
           ))}
         </ul>
         <div className="flex justify-between mt-2">
@@ -143,7 +159,8 @@ export default function Circle() {
         </div>
       </div>
 
-      {isModalOpen && <NewRecipeModal onClick={handleCloseRecipeModal} />}
+      {isModalOpen && <NewRecipeModal onClick={handleCloseModal} />}
+      {isReciepeModalOpen && <ViewRecipeModal onClick={handleCloseRecipeModal} />}
     </div>
   );
 }
