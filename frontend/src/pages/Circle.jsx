@@ -76,7 +76,7 @@ export default function Circle() {
   }
 
   return (
-    <div className="flex flex-col items-center ">
+    <div className="flex flex-col items-center">
       <h1 className="mb-8">Manage your cirlce</h1>
       <CircleIcon Icon={ConciergeBell} bottomText={circle.name} />
       <div className="w-full">
@@ -138,14 +138,13 @@ export default function Circle() {
                   onClick={openReciepeModalOpen}
                   className="text-left w-full bg-transparent p-0 m-0 border-none outline-none cursor-pointer"
                 >
-                <div className="flex flex-col"> 
-                  <span className="text-ogreen-500">{`Created by ${recipe.createdBy}`}</span>
-                  <span className="text-ogreen-400">See details</span>
-                </div>
+                  <div className="flex flex-col">
+                    <span className="text-ogreen-500">{`Created by ${recipe.createdBy}`}</span>
+                    <span className="text-ogreen-400">See details</span>
+                  </div>
                 </button>
-  }
-/>
-
+              }
+            />
           ))}
         </ul>
         <div className="flex justify-between mt-2">
@@ -160,7 +159,9 @@ export default function Circle() {
       </div>
 
       {isModalOpen && <NewRecipeModal onClick={handleCloseModal} />}
-      {isReciepeModalOpen && <ViewRecipeModal onClick={handleCloseRecipeModal} />}
+      {isReciepeModalOpen && (
+        <ViewRecipeModal onClick={handleCloseRecipeModal} />
+      )}
     </div>
   );
 }
