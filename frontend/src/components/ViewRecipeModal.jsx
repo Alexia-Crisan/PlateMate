@@ -68,7 +68,7 @@ export default function ViewRecipeModal({ onClick }) {
           ))}
         </ol>
         <button
-          className="mt-2 text-sm text-green-300 underline"
+          className="mt-2 text-sm text-ogreen-300 underline"
           onClick={handleAddIngredient}
         >
           + Add ingredient
