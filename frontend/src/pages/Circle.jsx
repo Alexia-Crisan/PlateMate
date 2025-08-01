@@ -12,7 +12,7 @@ export default function Circle() {
 
   // TODO: fetch the circle data from the API
   const [circle, setCircle] = useState({
-    name: "Sample circle",
+    name: "Circle name",
     inviteCode: "SI8Y5W",
     members: [
       {
